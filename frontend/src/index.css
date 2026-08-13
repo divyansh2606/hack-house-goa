@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-darker text-white font-display;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-primary to-brand-accent text-white font-bold py-3 px-8 rounded-xl
+    hover:opacity-90 transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
+    shadow-lg shadow-brand-primary/25;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-xl
+    hover:bg-white/20 transition-all duration-200 active:scale-95 border border-white/10;
+  }
+
+  .btn-twitter {
+    @apply bg-black text-white font-bold py-3 px-8 rounded-xl
+    hover:bg-gray-900 transition-all duration-200 active:scale-95 flex items-center gap-2
+    shadow-lg;
+  }
+
+  .card-glass {
+    @apply bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-6;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white
+    placeholder-white/30 focus:outline-none focus:border-brand-primary/50 focus:ring-2
+    focus:ring-brand-primary/20 transition-all duration-200;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-primary via-brand-accent to-brand-teal bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 107, 53, 0.2);
+  border-top-color: #FF6B35;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
